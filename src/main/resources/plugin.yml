@@ -1,0 +1,8 @@
+name: ItemsAPI
+version: '${project.version}'
+main: com.rapid.itemsapi.Main
+authors: [ R4PlD ]
+commands:
+  giveitem:
+    description: gives the item to the player
+    usage: /giveitem <item_id>
