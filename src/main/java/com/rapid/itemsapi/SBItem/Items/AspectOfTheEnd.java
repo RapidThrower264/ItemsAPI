@@ -1,8 +1,8 @@
 package com.rapid.itemsapi.SBItem.Items;
 
-import com.rapid.itemsapi.SBItem.Utils.Rarity;
-import com.rapid.itemsapi.SBItem.SBItemAbility;
-import com.rapid.itemsapi.SBItem.SBSword;
+import com.rapid.itemsapi.Utils.Rarity;
+import com.rapid.itemsapi.SBItem.Ability.SBItemAbility;
+import com.rapid.itemsapi.SBItem.Sword.SBSword;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;

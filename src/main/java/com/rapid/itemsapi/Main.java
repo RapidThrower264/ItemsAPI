@@ -1,8 +1,9 @@
 package com.rapid.itemsapi;
 
 import com.rapid.itemsapi.Commands.ItemCreationCommand;
-import com.rapid.itemsapi.Listener.PlayerInteractListener;
-import com.rapid.itemsapi.Listener.PlayerMiscListener;
+import com.rapid.itemsapi.Listeners.DamageListener;
+import com.rapid.itemsapi.Listeners.PlayerInteractListener;
+import com.rapid.itemsapi.Listeners.PlayerMiscListener;
 import com.rapid.itemsapi.Player.SBPlayerManager;
 import com.rapid.itemsapi.SBItem.AbilityManager;
 import com.rapid.itemsapi.SBItem.SBItemManager;
@@ -14,7 +15,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 public final class Main extends JavaPlugin {
     @Override
     public void onEnable() {
-        Bukkit.getConsoleSender().sendMessage(ChatColor.GOLD + "Initialising the SkyblockItemsV3 Plugin");
+        Bukkit.getConsoleSender().sendMessage(ChatColor.GOLD + "Initialising the ItemsAPI Plugin");
 
         SBItemManager.initialiseItemManager();
         SBPlayerManager.initialisePlayerManager();
@@ -23,13 +24,14 @@ public final class Main extends JavaPlugin {
         PluginManager pluginManager = Bukkit.getPluginManager();
         pluginManager.registerEvents(new PlayerInteractListener(), this);
         pluginManager.registerEvents(new PlayerMiscListener(), this);
+        pluginManager.registerEvents(new DamageListener(), this);
 
         getCommand("giveitem").setExecutor(new ItemCreationCommand());
     }
 
     @Override
     public void onDisable() {
-        Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "Shutting the SkyblockItemsV3 Plugin down");
+        Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "Shutting the ItemsAPI Plugin down");
 
         AbilityManager.stopRunnable();
     }

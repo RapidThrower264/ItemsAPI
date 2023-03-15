@@ -28,6 +28,7 @@ public class ItemCreationCommand implements CommandExecutor {
                 return true;
             }
 
+            player.sendMessage(ChatColor.GREEN + "Giving you a " + item.getRarity().getColor() + item.getName());
             player.getInventory().addItem(item.getItem());
             return true;
         }

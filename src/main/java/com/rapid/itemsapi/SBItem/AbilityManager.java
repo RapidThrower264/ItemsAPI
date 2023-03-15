@@ -12,6 +12,7 @@ import java.util.Iterator;
 public class AbilityManager {
     private static BukkitTask task;
     private static final ArrayList<Ability> activeAbilities = new ArrayList<>();
+
     public static void initialiseAbilityManager() {
         task = new BukkitRunnable() {
             @Override
@@ -36,6 +37,12 @@ public class AbilityManager {
     }
 
     public static void stopRunnable() {
-        task.cancel();
+        if (task != null)
+            task.cancel();
+
+        for (Ability ability : activeAbilities) {
+            ability.destroy();
+        }
+        activeAbilities.clear();
     }
 }

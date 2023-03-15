@@ -1,4 +1,4 @@
-package com.rapid.itemsapi.Listener;
+package com.rapid.itemsapi.Listeners;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

@@ -1,8 +1,8 @@
 package com.rapid.itemsapi.SBItem.Items;
 
-import com.rapid.itemsapi.SBItem.Utils.Rarity;
+import com.rapid.itemsapi.Utils.Rarity;
 import com.rapid.itemsapi.SBItem.SBItem;
-import com.rapid.itemsapi.SBItem.SBItemAbility;
+import com.rapid.itemsapi.SBItem.Ability.SBItemAbility;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.BlockFace;

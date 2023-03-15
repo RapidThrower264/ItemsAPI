@@ -1,7 +1,7 @@
 package com.rapid.itemsapi.SBItem;
 
 import com.rapid.itemsapi.SBItem.Items.*;
-import com.rapid.itemsapi.SBItem.Utils.Rarity;
+import com.rapid.itemsapi.Utils.Rarity;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 
@@ -11,7 +11,9 @@ public class SBItemManager {
     private static final HashMap<String, SBItem> SB_ITEMS = new HashMap<>();
 
     public static void initialiseItemManager() {
-        SBItem item = new SBItem("test_item", "Test Item", new String[] {ChatColor.WHITE + "This item is really just a test."}, Material.ANVIL, Rarity.COMMON);
+        SBItem item = new SBItem("test_item", "Test Item", new String[] {ChatColor.GRAY + "This item is really just a test.",
+                ChatColor.GRAY + "Does it serve a " + ChatColor.GREEN + "purpose" + ChatColor.GRAY + "?", "",
+                ChatColor.GRAY + "That, no one knows."}, Material.ANVIL, Rarity.COMMON);
         addItem(item);
 
         AspectOfTheEnd aote = new AspectOfTheEnd("ASPECT_OF_THE_END", "Aspect of the End", new String[] {}, Material.DIAMOND_SWORD, Rarity.RARE);

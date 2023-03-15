@@ -1,16 +1,21 @@
 package com.rapid.itemsapi.SBItem.Ability;
 
-import org.bukkit.World;
-
 public abstract class Ability {
+    private boolean abilityFinished;
     protected int currentTicks;
-    protected World world;
 
-    public Ability(World world) {
-        this.world = world;
+    public Ability() {
+        this.abilityFinished = false;
     }
 
     public abstract void abilityTick();
-    public abstract boolean isFinished();
     public abstract void destroy();
+
+    public boolean isFinished() {
+        return this.abilityFinished;
+    }
+
+    public void endAbility() {
+        this.abilityFinished = true;
+    }
 }
